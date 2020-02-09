@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         variable.Instance.direction = GetComponent<Transform>();
 	}
 	

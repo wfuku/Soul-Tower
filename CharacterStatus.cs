@@ -3,8 +3,7 @@ using System.Collections;
 
 public class CharacterStatus : MonoBehaviour
 {
-
-    //---------- 攻撃の章で使用します. ----------
+    
     // 体力.
     public int HP = 100;
     public int MaxHP = 100;
@@ -28,11 +27,10 @@ public class CharacterStatus : MonoBehaviour
     public GameObject lastAttackTarget = null;
     //連撃
     public bool chein;
-    //---------- GUIおよびネットワークの章で使用します. ----------
+
     // プレイヤー名.
     public string characterName = "Player";
 
-    //--------- アニメーションの章で使用します. -----------
     //状態.
     public bool attacking = false;
     public bool attacking2 = false;
@@ -71,6 +69,11 @@ public class CharacterStatus : MonoBehaviour
                 HP = Mathf.Min(HP + MaxHP / 3, MaxHP);
                 break;
         }
+    }
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
     }
 
     void Start()

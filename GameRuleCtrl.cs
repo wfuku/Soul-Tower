@@ -19,8 +19,12 @@ public class GameRuleCtrl : MonoBehaviour {
     // フェード用
     public FadeGame fade;
     public float fadeSpeed;
-
-	void Start()
+    //FPS制限
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+    void Start()
 	{
         // オーディオの初期化.
         clearSeAudio = gameObject.AddComponent<AudioSource>();
